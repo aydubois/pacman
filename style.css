@@ -1,0 +1,188 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    place-items: center;
+}
+.wall{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: double 6px transparent;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 3px 3px #12324f,inset 0px 0px 6px 6px #1F6EB4, 0px 0px 3px 3px #12324f, 0px 0px 6px 6px #1F6EB4;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-image: linear-gradient(black, black), radial-gradient(circle at center, #12324f 65%,#4c4b4b 94%, black 104%);
+}
+.little{
+    width: 170px;
+    height: 170px;
+}
+
+.pacman{
+    width: 30px;
+    height: 30px;
+    background-color: #e7954b;
+    border-radius: 50%;
+}
+.pacman:before{
+    position: absolute;
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    content: '';
+    animation: rotate 10s linear;
+    /* animation: rotate 10s linear, mouth 0.7s infinite; */
+
+}
+.ball{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #e7954b;
+}
+.fatball{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e7954b;
+}
+
+.container, .ball, .fatball{
+    position: absolute;
+}
+.container{
+    top: 14px;
+    left: 17px;
+    /* animation: walk 10s linear; */
+}
+
+.ball1{
+    top: 25px;
+    left: 60px;
+}
+.ball2{
+    top: 25px;
+    left: 100px;
+}
+.ball3{
+    top: 25px;
+    left: 140px;
+}
+.ball4{
+    top: 25px;
+    left: 180px;
+}
+.ball5{
+    top: 25px;
+    left: 223px;
+}
+.ball6{
+    top: 25px;
+    left: 267px;
+}
+.ball7{
+    top: 62px;
+    left: 267px;
+}
+.ball8{
+    top: 102px;
+    left: 267px;
+}
+.ball9{
+    top: 142px;
+    left: 267px;
+}
+.ball10{
+    top: 184px;
+    left: 267px;
+}
+.ball11{
+    top: 225px;
+    left: 267px;
+}
+.ball12{
+    top: 267px;
+    left: 267px;
+}
+.ball13{
+    top: 267px;
+    left: 60px;
+}
+.ball14{
+    top: 267px;
+    left: 100px;
+}
+.ball15{
+    top: 267px;
+    left: 140px;
+}
+.ball16{
+    top: 267px;
+    left: 180px;
+}
+.ball17{
+    top: 267px;
+    left: 223px;
+}
+.fatball{
+    top: 265px;
+    left: 25px;
+}
+
+@keyframes mouth {
+    0% {
+        clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+
+    50% {
+        clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+    }
+    
+    100% {
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+}
+
+@keyframes walk{
+    0%{
+        transform: translate(0,0);
+    }
+    25%{
+        transform: translate(245px,0);
+    }
+
+    50%{
+        transform: translate(245px,245px);
+    }
+    75%{
+        transform: translate(0,245px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+@keyframes rotate{
+    0%{
+        transform: rotateX(0deg);
+    }
+    25%{
+        transform:rotateX(90deg);
+    }
+
+    50%{
+        transform: rotateX(180deg);
+    }
+    75%{
+        transform: rotateX(270deg);
+    }
+    100%{
+        transform:rotateX(360deg);
+    }
+}
